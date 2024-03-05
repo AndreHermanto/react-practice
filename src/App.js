@@ -1,23 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import Article from './components/Article/Article';
+import * as Books from './components/Book/Book';
+import List from './components/List/List';
+import BlogContent from './components/Blog/Blog';
 
 function App() {
+  const info = "Today is happy day"
+  const obj = {
+    street: "Charles",
+    streetNo: "12",
+    unitNo: "2"
+  }
+
+  const arr = ["a", "b", "c"]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Article info={info}/>
+      <Books.Book title="Game of thrones" showList={false} address={obj}/>
+      <List arr={arr} />
+
+      <BlogContent articleText={"This is a blog"}/>
     </div>
   );
 }
